@@ -1,0 +1,2 @@
+require("bhiv")
+print("hello")
