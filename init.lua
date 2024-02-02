@@ -1,2 +1,2 @@
 require("bhiv")
-print("hello")
+require("packer")

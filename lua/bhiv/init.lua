@@ -1,2 +1,2 @@
 require("bhiv.remap")
-print("hello from bhiv")
+require("bhiv.set")
