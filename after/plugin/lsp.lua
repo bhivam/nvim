@@ -25,7 +25,9 @@ nvim_lsp.tsserver.setup {
 nvim_lsp.tailwindcss.setup {}
 
 -- Go
-nvim_lsp.gopls.setup {}
+nvim_lsp.gopls.setup {
+    on_attach = on_attach
+}
 
 -- Lua
 require'lspconfig'.lua_ls.setup {
