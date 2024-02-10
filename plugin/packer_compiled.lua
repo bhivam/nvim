@@ -95,6 +95,16 @@ _G.packer_plugins = {
     path = "/Users/shivam/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/Users/shivam/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
+  ["flutter-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/shivam/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
+    url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/shivam/.local/share/nvim/site/pack/packer/start/harpoon",

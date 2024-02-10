@@ -69,4 +69,8 @@ return packer.startup(function(use)
         require("toggleterm").setup()
     end}
 
+    use {"stevearc/dressing.nvim"}
+
+    use {"akinsho/flutter-tools.nvim"}
+
 end)
