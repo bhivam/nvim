@@ -26,3 +26,8 @@ vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
 vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
 vim.keymap.set('n', 'ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>')
 vim.keymap.set('n', '<leader>fm', '<Cmd>lua vim.lsp.buf.format()<CR>')
+
+-- TAB MAPPINGS
+vim.keymap.set('n', '<leader>tN', '<Cmd>tabnew<CR>')
+vim.keymap.set('n', '<leader>tn', '<Cmd>tabnext<CR>')
+
