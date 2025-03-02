@@ -1,76 +1,79 @@
 local status, packer = pcall(require, "packer")
 if (not status) then
-    print("Packer is not installed")
-    return
+  print("Packer is not installed")
+  return
 end
 
 vim.cmd [[packadd packer.nvim]]
 
 return packer.startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.5',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+  use 'wakatime/vim-wakatime'
 
-	use {
-		"catppuccin/nvim",
-		as = "catppuccin" ,
-		config = function()
-			vim.cmd.colorscheme "catppuccin"
-		end
-	}
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
 
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      vim.cmd.colorscheme "catppuccin-latte"
+    end
+  }
 
-	use {'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}}
+  use { 'github/copilot.vim' }
 
-	use {'nvim-treesitter/playground'}
+  use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
 
-	use {'theprimeagen/harpoon'}
+  use { 'nvim-treesitter/playground' }
 
-	use {'mbbill/undotree'}
+  use { 'theprimeagen/harpoon' }
 
-	use {'tpope/vim-fugitive'}
+  use { 'mbbill/undotree' }
 
-    use {'nvim-lualine/lualine.nvim'}
+  use { 'tpope/vim-fugitive' }
 
-    use {'onsails/lspkind-nvim'} 
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
-    use {'L3MON4D3/LuaSnip'}
+  use { 'onsails/lspkind-nvim' }
 
-    use {'hrsh7th/cmp-nvim-lsp'}
+  use { 'L3MON4D3/LuaSnip' }
 
-    use {'hrsh7th/cmp-buffer'}
+  use { 'hrsh7th/cmp-nvim-lsp' }
 
-    use {'hrsh7th/nvim-cmp'}
+  use { 'hrsh7th/cmp-buffer' }
 
-    use {'windwp/nvim-ts-autotag'}
+  use { 'hrsh7th/nvim-cmp' }
 
-    use {
-        'windwp/nvim-autopairs',
-        config = function() require("nvim-autopairs").setup {} end
-    }
+  use { 'windwp/nvim-ts-autotag' }
 
-    use {'akinsho/nvim-bufferline.lua', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+  use {
+    'windwp/nvim-autopairs',
+    config = function() require("nvim-autopairs").setup {} end
+  }
 
-    use {'jose-elias-alvarez/null-ls.nvim'}
+  use { 'akinsho/nvim-bufferline.lua', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 
-    use {'MunifTanjim/prettier.nvim'}
+  use { 'jose-elias-alvarez/null-ls.nvim' }
 
-    use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
-    }
+  use { 'MunifTanjim/prettier.nvim' }
 
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end}
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
 
-    use {"stevearc/dressing.nvim"}
+  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end }
 
-    use {"akinsho/flutter-tools.nvim"}
-
+  use { "akinsho/flutter-tools.nvim" }
 end)

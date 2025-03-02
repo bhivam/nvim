@@ -2,11 +2,16 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
     callback = function()
-        if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
+      if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
             vim.api.nvim_command('silent update')
         end
     end,
 })
+
+-- Add in some cool mappings here
+vim.keymap.set('n', '<leader>q', '<Cmd>q<CR>')
+vim.keymap.set('n', '<leader>Q', '<Cmd>qa<CR>')
+
 
 function Save_file()
     local modifiable = vim.api.nvim_buf_get_option(0, 'modifiable')
@@ -30,4 +35,9 @@ vim.keymap.set('n', '<leader>fm', '<Cmd>lua vim.lsp.buf.format()<CR>')
 -- TAB MAPPINGS
 vim.keymap.set('n', '<leader>tN', '<Cmd>tabnew<CR>')
 vim.keymap.set('n', '<leader>tn', '<Cmd>tabnext<CR>')
+
+-- COPILOT MAPPINGS
+vim.keymap.set('i', '<C-s>', '<Plug>(copilot-suggest)')
+
+
 
