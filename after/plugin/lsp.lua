@@ -44,6 +44,14 @@ nvim_lsp.clangd.setup {
   on_attach = on_attach
 }
 
+-- PHP
+nvim_lsp.phpactor.setup {
+  on_attach = on_attach,
+  cmd = { "phpactor", "language-server" },
+  filetypes = { "php" },
+  root_dir = nvim_lsp.util.root_pattern("composer.json", ".git")
+}
+
 -- Rust
 nvim_lsp.rust_analyzer.setup {
   on_attach = on_attach,
@@ -142,6 +150,9 @@ require 'lspconfig'.lua_ls.setup {
     return true
   end
 }
+
+
+
 
 local status, cmp = pcall(require, "cmp")
 if (not status) then return end
