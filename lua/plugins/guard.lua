@@ -7,6 +7,8 @@ return {
 		local ft = require("guard.filetype")
 		ft("typescript,javascript,typescriptreact"):fmt("prettier")
 
+		--:fmt("prettier")--
+
 		ft("lua"):fmt("stylua")
 
 		ft("rust"):fmt("rustfmt")
