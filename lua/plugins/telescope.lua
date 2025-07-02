@@ -1,1 +1,1 @@
-return { 'nvim-telescope/telescope.nvim', lazy = false }
+return { "nvim-telescope/telescope.nvim", lazy = false }
