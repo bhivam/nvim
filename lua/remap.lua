@@ -20,7 +20,6 @@ vim.keymap.set("n", "<leader>w", "<Cmd>lua Save_file()<CR>", {
 	silent = true,
 })
 
--- UndoTree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 local builtin = require("telescope.builtin")

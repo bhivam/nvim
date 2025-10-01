@@ -5,7 +5,7 @@ return {
 	},
 	config = function()
 		local ft = require("guard.filetype")
-		ft("typescript,javascript,typescriptreact"):fmt("prettier")
+		ft("typescript,javascript,typescriptreact"):fmt("prettierd")
 
 		--:fmt("prettier")--
 
