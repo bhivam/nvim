@@ -23,7 +23,7 @@ return {
 				lualine_b = {},
 				lualine_c = {},
 				lualine_x = {},
-				lualine_y = { "filetype", "lsp_status" },
+				lualine_y = { "filetype" },
 				lualine_z = {},
 			},
 		})
