@@ -67,10 +67,21 @@ return {
 
 			require("mason").setup()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "gopls", "stylua" },
+				ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "gopls", "stylua", "eslint" },
 				handlers = {
 					function(server_name)
 						require("lspconfig")[server_name].setup({})
+					end,
+
+					-- ESLint LSP: surface ESLint diagnostics inline & support auto-fix
+					["eslint"] = function()
+						require("lspconfig").eslint.setup({
+							settings = {
+								experimental = {
+									useFlatConfig = true,
+								},
+							},
+						})
 					end,
 				},
 			})

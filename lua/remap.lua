@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<Cmd>Oil<CR>")
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 	callback = function()
 		if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
@@ -17,4 +17,7 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>pf", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>rf", builtin.resume, { desc = "Telescope resume" })
 vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope diagnostics" })
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
