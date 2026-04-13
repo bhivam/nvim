@@ -77,7 +77,7 @@ in
       fd
 
       # Wakatime
-      wakatime
+      wakatime-cli
     ];
   };
 
