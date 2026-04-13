@@ -20,9 +20,10 @@ cmp.setup({
 -- LSP
 vim.opt.signcolumn = "yes"
 
-local lsp_defaults = require("lspconfig").util.default_config
-lsp_defaults.capabilities =
-	vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
+-- Set cmp capabilities for all servers
+vim.lsp.config("*", {
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP actions",
@@ -42,17 +43,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
--- Configure servers directly (installed via Nix, no mason needed)
-local lspconfig = require("lspconfig")
-
-lspconfig.lua_ls.setup({})
-lspconfig.ts_ls.setup({})
-lspconfig.tailwindcss.setup({})
-lspconfig.gopls.setup({})
-lspconfig.eslint.setup({
+-- Server-specific config (nvim-lspconfig provides defaults via vim.lsp.config)
+vim.lsp.config("eslint", {
 	settings = {
 		experimental = {
 			useFlatConfig = true,
 		},
 	},
 })
+
+-- Enable all servers (installed via Nix extraPackages)
+vim.lsp.enable({ "lua_ls", "ts_ls", "tailwindcss", "gopls", "eslint" })
