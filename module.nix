@@ -69,10 +69,15 @@ in
       # Formatters
       prettierd
       stylua
+      rustfmt
+      go # provides gofmt
 
       # Tools for telescope
       ripgrep
       fd
+
+      # Wakatime
+      wakatime
     ];
   };
 
