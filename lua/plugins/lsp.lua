@@ -53,4 +53,4 @@ vim.lsp.config("eslint", {
 })
 
 -- Enable all servers (installed via Nix extraPackages)
-vim.lsp.enable({ "lua_ls", "ts_ls", "tailwindcss", "gopls", "eslint" })
+vim.lsp.enable({ "lua_ls", "ts_ls", "tailwindcss", "gopls", "eslint", "pyright" })

@@ -65,6 +65,7 @@ in
       tailwindcss-language-server
       gopls
       vscode-langservers-extracted # provides eslint language server
+      pyright
 
       # Formatters
       prettierd
